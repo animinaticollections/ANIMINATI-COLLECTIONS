@@ -1,0 +1,17 @@
+{
+  "name": "AniMinati Collections",
+  "short_name": "AniMinati",
+  "description": "Fashion without limits — contemporary clothing, footwear and accessories for everyone.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0b8589",
+  "icons": [
+    {
+      "src": "/assets/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
