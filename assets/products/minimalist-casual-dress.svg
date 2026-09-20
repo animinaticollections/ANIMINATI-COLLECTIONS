@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1100" role="img">
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f8e8ec"/><stop offset="1" stop-color="#e0b4c0"/></linearGradient><filter id="shadow"><feGaussianBlur stdDeviation="24"/></filter></defs>
+<rect width="900" height="1100" fill="url(#bg)"/><ellipse cx="450" cy="920" rx="250" ry="48" fill="#000" opacity=".18" filter="url(#shadow)"/><path d="M355 185L415 215H485L545 185 585 350 540 385 600 840H300L360 385 315 350Z" fill="#d99bad" stroke="#a96c7c" stroke-width="7"/><path d="M415 215L450 270 485 215M360 385Q450 420 540 385" fill="none" stroke="#bd7e8e" stroke-width="7"/></svg>

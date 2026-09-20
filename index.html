@@ -2485,6 +2485,7 @@ const products = [
     {
         id: 2,
         name: "Premium Casual Shirt",
+        image: "assets/products/premium-casual-shirt.svg",
         category: "Men",
         price: 1199,
         visual: "visual-shirt visual-gray",
@@ -2497,6 +2498,7 @@ const products = [
     {
         id: 3,
         name: "Urban Cargo Trousers",
+        image: "assets/products/urban-cargo-trousers.svg",
         category: "Men",
         price: 1399,
         visual: "visual-black",
@@ -2509,6 +2511,7 @@ const products = [
     {
         id: 4,
         name: "Everyday Crop Top",
+        image: "assets/products/everyday-crop-top.svg",
         category: "Women",
         price: 699,
         visual: "visual-pink visual-shirt",
@@ -2521,6 +2524,7 @@ const products = [
     {
         id: 5,
         name: "Relaxed Women's Shirt",
+        image: "assets/products/relaxed-womens-shirt.svg",
         category: "Women",
         price: 1099,
         visual: "visual-sand visual-shirt",
@@ -2533,6 +2537,7 @@ const products = [
     {
         id: 6,
         name: "Minimalist Casual Dress",
+        image: "assets/products/minimalist-casual-dress.svg",
         category: "Women",
         price: 1299,
         visual: "visual-pink",
@@ -2545,6 +2550,7 @@ const products = [
     {
         id: 7,
         name: "Signature Oversized Tee",
+        image: "assets/products/signature-oversized-tee.svg",
         category: "Unisex",
         price: 899,
         visual: "visual-black visual-shirt",
@@ -2557,6 +2563,7 @@ const products = [
     {
         id: 8,
         name: "AniMinati Essential Hoodie",
+        image: "assets/products/animinati-essential-hoodie.svg",
         category: "Unisex",
         price: 1499,
         visual: "visual-teal visual-shirt",
@@ -2569,6 +2576,7 @@ const products = [
     {
         id: 9,
         name: "Streetwear Sweatshirt",
+        image: "assets/products/streetwear-sweatshirt.svg",
         category: "Unisex",
         price: 1299,
         visual: "visual-gray visual-shirt",
@@ -2581,6 +2589,7 @@ const products = [
     {
         id: 10,
         name: "Urban Street Sneakers",
+        image: "assets/products/urban-street-sneakers.svg",
         category: "Footwear",
         price: 1999,
         visual: "visual-sneaker",
@@ -2593,6 +2602,7 @@ const products = [
     {
         id: 11,
         name: "Everyday Slides",
+        image: "assets/products/everyday-slides.svg",
         category: "Footwear",
         price: 799,
         visual: "visual-sand",
@@ -2605,6 +2615,7 @@ const products = [
     {
         id: 12,
         name: "Signature Crossbody Bag",
+        image: "assets/products/signature-crossbody-bag.svg",
         category: "Accessories",
         price: 999,
         visual: "visual-bag",
@@ -2614,7 +2625,7 @@ const products = [
             "A compact crossbody bag designed for everyday essentials and contemporary streetwear looks."
     }
 
-];
+]
 
 
 /* ---------------------------------------------------------
@@ -3036,14 +3047,23 @@ function openProduct(id) {
         product.description;
 
 
-    modalImage.innerHTML = `
-        <div
-            class="
-                product-visual
-                ${product.visual}
-            ">
-        </div>
-    `;
+    modalImage.innerHTML = product.image
+        ? `
+            <img
+                class="modal-image-real"
+                src="${product.image}"
+                alt="${product.name}"
+                style="width:100%;height:100%;object-fit:contain;display:block;"
+            >
+        `
+        : `
+            <div
+                class="
+                    product-visual
+                    ${product.visual}
+                ">
+            </div>
+        `;
 
 
     modalSizes.innerHTML =
@@ -3159,6 +3179,7 @@ function addToCart(product, size) {
             id: product.id,
             name: product.name,
             price: product.price,
+            image: product.image || "",
             visual: product.visual,
             size: size,
             quantity: 1
@@ -3244,12 +3265,24 @@ function renderCart() {
                 class="cart-item-image"
                 style="background:#eef2f2">
 
-                <div
-                    class="
-                        product-visual
-                        ${item.visual}
-                    ">
-                </div>
+                ${(item.image || (products.find(product => product.id === item.id) || {}).image)
+                    ? `
+                        <img
+                            class="cart-item-image-real"
+                            src="${item.image || (products.find(product => product.id === item.id) || {}).image}"
+                            alt="${item.name}"
+                            style="width:100%;height:100%;object-fit:contain;display:block;"
+                        >
+                    `
+                    : `
+                        <div
+                            class="
+                                product-visual
+                                ${item.visual}
+                            ">
+                        </div>
+                    `
+                }
 
             </div>
 

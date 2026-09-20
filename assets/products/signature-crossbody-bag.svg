@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1100" role="img">
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e9eeee"/><stop offset="1" stop-color="#c5cecd"/></linearGradient><filter id="shadow"><feGaussianBlur stdDeviation="24"/></filter></defs>
+<rect width="900" height="1100" fill="url(#bg)"/><ellipse cx="450" cy="920" rx="250" ry="48" fill="#000" opacity=".18" filter="url(#shadow)"/><path d="M280 335Q450 285 620 335L600 790Q450 835 300 790Z" fill="#252a2b" stroke="#101313" stroke-width="8"/><path d="M310 350Q330 135 450 135T590 350" fill="none" stroke="#42494a" stroke-width="20"/><path d="M340 500H560V675H340Z" fill="#303637" stroke="#596062" stroke-width="5"/><circle cx="450" cy="520" r="10" fill="#d9a1b0"/><text x="450" y="620" text-anchor="middle" font-family="Arial" font-size="25" letter-spacing="5" fill="#d7dada">ANI</text></svg>

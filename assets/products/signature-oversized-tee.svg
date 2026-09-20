@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1100" role="img">
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e6eaeb"/><stop offset="1" stop-color="#b9c1c3"/></linearGradient><filter id="shadow"><feGaussianBlur stdDeviation="24"/></filter></defs>
+<rect width="900" height="1100" fill="url(#bg)"/><ellipse cx="450" cy="920" rx="250" ry="48" fill="#000" opacity=".18" filter="url(#shadow)"/><path d="M235 265L350 190 405 230H495L550 190 665 265 610 440 555 395V820H345V395L290 440Z" fill="#222628" stroke="#0e1011" stroke-width="7"/><path d="M405 230L450 285 495 230" fill="none" stroke="#4a5153" stroke-width="7"/><text x="450" y="560" text-anchor="middle" font-family="Arial" font-size="34" letter-spacing="6" fill="#e8aaaa">ANIMINATI</text></svg>
