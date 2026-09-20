@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+# Add the live sitemap URL after the final Cloudflare Pages URL is confirmed.
