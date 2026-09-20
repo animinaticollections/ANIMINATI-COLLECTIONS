@@ -1,4 +1,19 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1100" role="img">
-<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#efe7da"/><stop offset="1" stop-color="#d8c2a0"/></linearGradient><filter id="shadow"><feGaussianBlur stdDeviation="24"/></filter></defs>
-<rect width="900" height="1100" fill="url(#bg)"/><ellipse cx="450" cy="920" rx="250" ry="48" fill="#000" opacity=".18" filter="url(#shadow)"/><path d="M250 255L360 185 405 225H495L540 185 650 255 600 430 555 385V805Q450 840 345 805V385L300 430Z" fill="#d9c19d" stroke="#9e8667" stroke-width="7"/><path d="M405 225L450 290 495 225M450 290V815" fill="none" stroke="#b69b7c" stroke-width="7"/><circle cx="450" cy="350" r="7"/><circle cx="450" cy="415" r="7"/><circle cx="450" cy="480" r="7"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" role="img" aria-label="Premium fashion product render">
+<defs>
+ <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#fafafa"/><stop offset="1" stop-color="#eceae7"/></linearGradient>
+ <linearGradient id="mat" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f8faf8"/><stop offset=".28" stop-color="#d7ddd8"/><stop offset=".72" stop-color="#d7ddd8"/><stop offset="1" stop-color="#9aa59d"/></linearGradient>
+ <linearGradient id="edge" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#9aa59d"/><stop offset=".5" stop-color="#d7ddd8"/><stop offset="1" stop-color="#9aa59d"/></linearGradient>
+ <filter id="shadow" x="-30%" y="-30%" width="160%" height="180%"><feGaussianBlur stdDeviation="22"/></filter>
+ <filter id="soft" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="5"/></filter>
+ <pattern id="weave" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M0 2h10M0 7h10" stroke="#fff" stroke-opacity=".08" stroke-width="1"/></pattern>
+</defs>
+<rect width="900" height="900" fill="url(#bg)"/>
+<ellipse cx="450" cy="755" rx="255" ry="42" fill="#777" opacity=".18" filter="url(#shadow)"/>
+<g>
+<path d="M250 225L345 180Q450 225 555 180L650 225 735 335 635 395 580 315V670Q450 710 320 670V315L265 395 165 335Z" fill="url(#mat)" stroke="#9aa59d" stroke-width="7"/>
+<path d="M345 180Q450 245 555 180L525 255Q450 300 375 255Z" fill="#f8faf8" stroke="#9aa59d" stroke-width="6"/>
+<path d="M450 260V670M320 670Q450 690 580 670" stroke="#9aa59d" stroke-width="4" fill="none"/>
+<path d="M315 455H420V555H315Z" fill="none" stroke="#9aa59d" stroke-width="5"/>
+<path d="M330 470H405" stroke="#f8faf8" stroke-width="3"/>
+<path d="M250 225L320 670M650 225L580 670" stroke="#fff" stroke-opacity=".15" stroke-width="10"/>
+</g><rect x="145" y="105" width="610" height="590" fill="url(#weave)" opacity=".28" pointer-events="none"/></svg>

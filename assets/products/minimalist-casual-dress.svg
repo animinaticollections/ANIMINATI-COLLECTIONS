@@ -1,4 +1,18 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1100" role="img">
-<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f8e8ec"/><stop offset="1" stop-color="#e0b4c0"/></linearGradient><filter id="shadow"><feGaussianBlur stdDeviation="24"/></filter></defs>
-<rect width="900" height="1100" fill="url(#bg)"/><ellipse cx="450" cy="920" rx="250" ry="48" fill="#000" opacity=".18" filter="url(#shadow)"/><path d="M355 185L415 215H485L545 185 585 350 540 385 600 840H300L360 385 315 350Z" fill="#d99bad" stroke="#a96c7c" stroke-width="7"/><path d="M415 215L450 270 485 215M360 385Q450 420 540 385" fill="none" stroke="#bd7e8e" stroke-width="7"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" role="img" aria-label="Premium fashion product render">
+<defs>
+ <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#fafafa"/><stop offset="1" stop-color="#eceae7"/></linearGradient>
+ <linearGradient id="mat" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f7f3ed"/><stop offset=".28" stop-color="#ded8cf"/><stop offset=".72" stop-color="#ded8cf"/><stop offset="1" stop-color="#aaa094"/></linearGradient>
+ <linearGradient id="edge" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#aaa094"/><stop offset=".5" stop-color="#ded8cf"/><stop offset="1" stop-color="#aaa094"/></linearGradient>
+ <filter id="shadow" x="-30%" y="-30%" width="160%" height="180%"><feGaussianBlur stdDeviation="22"/></filter>
+ <filter id="soft" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="5"/></filter>
+ <pattern id="weave" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M0 2h10M0 7h10" stroke="#fff" stroke-opacity=".08" stroke-width="1"/></pattern>
+</defs>
+<rect width="900" height="900" fill="url(#bg)"/>
+<ellipse cx="450" cy="755" rx="255" ry="42" fill="#777" opacity=".18" filter="url(#shadow)"/>
+<g>
+<path d="M360 190Q450 225 540 190L560 305 650 675Q450 745 250 675L340 305Z" fill="url(#mat)" stroke="#aaa094" stroke-width="8"/>
+<path d="M360 190Q450 245 540 190L520 275Q450 315 380 275Z" fill="#f7f3ed" stroke="#aaa094" stroke-width="6"/>
+<path d="M340 305Q450 340 560 305" fill="none" stroke="#aaa094" stroke-width="5"/>
+<path d="M330 390Q450 420 570 390M305 510Q450 545 595 510M275 630Q450 665 625 630" fill="none" stroke="#fff" stroke-opacity=".18" stroke-width="7"/>
+<path d="M450 315V690" stroke="#aaa094" stroke-width="3" opacity=".55"/>
+</g><rect x="145" y="105" width="610" height="590" fill="url(#weave)" opacity=".28" pointer-events="none"/></svg>

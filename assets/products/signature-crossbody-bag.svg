@@ -1,4 +1,20 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1100" role="img">
-<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e9eeee"/><stop offset="1" stop-color="#c5cecd"/></linearGradient><filter id="shadow"><feGaussianBlur stdDeviation="24"/></filter></defs>
-<rect width="900" height="1100" fill="url(#bg)"/><ellipse cx="450" cy="920" rx="250" ry="48" fill="#000" opacity=".18" filter="url(#shadow)"/><path d="M280 335Q450 285 620 335L600 790Q450 835 300 790Z" fill="#252a2b" stroke="#101313" stroke-width="8"/><path d="M310 350Q330 135 450 135T590 350" fill="none" stroke="#42494a" stroke-width="20"/><path d="M340 500H560V675H340Z" fill="#303637" stroke="#596062" stroke-width="5"/><circle cx="450" cy="520" r="10" fill="#d9a1b0"/><text x="450" y="620" text-anchor="middle" font-family="Arial" font-size="25" letter-spacing="5" fill="#d7dada">ANI</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" role="img" aria-label="Premium fashion product render">
+<defs>
+ <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#fafafa"/><stop offset="1" stop-color="#eceae7"/></linearGradient>
+ <linearGradient id="mat" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#b6b0a6"/><stop offset=".28" stop-color="#3b3a38"/><stop offset=".72" stop-color="#3b3a38"/><stop offset="1" stop-color="#1d1c1b"/></linearGradient>
+ <linearGradient id="edge" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#1d1c1b"/><stop offset=".5" stop-color="#3b3a38"/><stop offset="1" stop-color="#1d1c1b"/></linearGradient>
+ <filter id="shadow" x="-30%" y="-30%" width="160%" height="180%"><feGaussianBlur stdDeviation="22"/></filter>
+ <filter id="soft" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="5"/></filter>
+ <pattern id="weave" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M0 2h10M0 7h10" stroke="#fff" stroke-opacity=".08" stroke-width="1"/></pattern>
+</defs>
+<rect width="900" height="900" fill="url(#bg)"/>
+<ellipse cx="450" cy="755" rx="255" ry="42" fill="#777" opacity=".18" filter="url(#shadow)"/>
+<g>
+<path d="M240 300Q450 245 660 300L700 665Q450 735 200 665Z" fill="url(#mat)" stroke="#1d1c1b" stroke-width="9"/>
+<path d="M315 300Q315 135 450 135Q585 135 585 300" fill="none" stroke="#1d1c1b" stroke-width="28" stroke-linecap="round"/>
+<path d="M350 300Q350 170 450 170Q550 170 550 300" fill="none" stroke="#b6b0a6" stroke-width="6" opacity=".7"/>
+<path d="M270 410Q450 445 630 410M250 590Q450 625 650 590" fill="none" stroke="#fff" stroke-opacity=".12" stroke-width="8"/>
+<rect x="330" y="465" width="240" height="125" rx="20" fill="#1d1c1b" opacity=".35" stroke="#b6b0a6" stroke-width="5"/>
+<path d="M390 530H510" stroke="#b6b0a6" stroke-width="6" stroke-linecap="round"/>
+<circle cx="450" cy="650" r="10" fill="#b6b0a6" opacity=".8"/>
+</g><rect x="145" y="105" width="610" height="590" fill="url(#weave)" opacity=".28" pointer-events="none"/></svg>
