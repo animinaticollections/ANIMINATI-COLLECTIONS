@@ -2472,6 +2472,7 @@ const products = [
     {
         id: 1,
         name: "Essential Oversized T-Shirt",
+        image: "assets/products/men-essential-tee.jpg",
         category: "Men",
         price: 899,
         visual: "visual-shirt visual-teal",
@@ -2798,9 +2799,17 @@ function renderProducts() {
                     };
                 ">
 
-                <div
-                    class="product-visual ${product.visual}">
-                </div>
+               ${product.image
+    ? `<img
+        class="product-image-real"
+        src="${product.image}"
+        alt="${product.name}"
+        loading="lazy"
+        style="width:100%;height:100%;object-fit:contain;display:block;"
+    >`
+    : `<div class="product-visual ${product.visual}"></div>`
+}
+
 
                 <span class="product-badge">
                     ${product.badge}
