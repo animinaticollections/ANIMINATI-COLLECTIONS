@@ -14,6 +14,17 @@
 <meta name="keywords"
       content="AniMinati Collections, fashion, clothing, streetwear, unisex fashion, footwear, accessories">
 
+<meta name="robots" content="index, follow">
+<meta name="author" content="AniMinati Collections">
+<meta name="application-name" content="AniMinati Collections">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AniMinati Collections">
+<meta property="og:image" content="assets/logo-header.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AniMinati Collections | Fashion Without Limits">
+<meta name="twitter:description" content="Contemporary fashion for every style, identity and expression.">
+<meta name="twitter:image" content="assets/logo-header.jpg">
+
 <meta property="og:title"
       content="AniMinati Collections | Fashion Without Limits">
 
@@ -64,6 +75,40 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+.skip-link {
+    position: fixed;
+    left: 16px;
+    top: -60px;
+    z-index: 5000;
+    padding: 10px 14px;
+    background: var(--black);
+    color: var(--white);
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: top .2s ease;
+}
+.skip-link:focus {
+    top: 16px;
+}
+
+.product-image-real {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 8%;
+    transition: transform .45s cubic-bezier(.2,.7,.2,1);
+}
+.product-card:hover .product-image-real {
+    transform: scale(1.035);
+}
+.modal-image-real {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 5%;
 }
 
 html {
@@ -1725,10 +1770,29 @@ footer {
 }
 
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "AniMinati Collections",
+  "description": "Contemporary clothing, footwear and accessories for everyone.",
+  "logo": "assets/logo-header.jpg"
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "AniMinati Collections",
+  "description": "Fashion without limits — contemporary clothing, footwear and accessories for everyone."
+}
+</script>
 </head>
 
 
 <body>
+<a class="skip-link" href="#shop">Skip to collection</a>
 
 <!-- =======================================================
      ANNOUNCEMENT
@@ -1751,8 +1815,11 @@ footer {
 
         <div class="brand-logo">
     <img
-        src="assets/logo-header.png"
-        alt="AniMinati Collections — Fashion Hub For All">
+        src="assets/logo-header.jpg"
+        alt="AniMinati Collections — Fashion Hub For All"
+        width="500"
+        height="144"
+        fetchpriority="high">
 </div>
 
         
@@ -2208,7 +2275,8 @@ footer {
 
     <p>
         Receive new collection announcements, exclusive
-        drops and fashion updates.
+        drops and fashion updates. Your email is kept in your browser
+        until a live newsletter service is connected.
     </p>
 
 
@@ -2341,7 +2409,8 @@ footer {
 
     <button
         class="close-btn"
-        id="closeCart">
+        id="closeCart"
+        aria-label="Close shopping bag">
         ×
     </button>
 
@@ -2366,6 +2435,10 @@ footer {
             ₹0
         </strong>
 
+    </div>
+
+    <div style="font-size:10px;color:#777;line-height:1.5;margin-bottom:12px;">
+        Secure order flow coming soon. No payment is taken on this page.
     </div>
 
     <button
@@ -2399,7 +2472,8 @@ footer {
 
     <button
         class="modal-close"
-        id="closeModal">
+        id="closeModal"
+        aria-label="Close product details">
         ×
     </button>
 
@@ -3599,7 +3673,7 @@ document
         }
 
         showToast(
-            "Checkout module coming in Phase 2."
+            "Online checkout is being prepared. Your bag is saved on this device."
         );
 
     });
