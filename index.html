@@ -1289,7 +1289,30 @@ footer {
 
     font-size: 14px;
 
-    margin-bottom: 18px;
+    margin-bottom: 12px;
+}
+
+.cart-actions {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.clear-cart-btn {
+    flex: 0 0 auto;
+    min-height: 42px;
+    padding: 0 16px;
+    border: 1px solid #ddd;
+    background: white;
+    color: #555;
+    font-size: 9px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.clear-cart-btn:hover {
+    border-color: var(--black);
+    color: var(--black);
 }
 
 .checkout-btn {
@@ -2433,11 +2456,21 @@ footer {
         Secure order flow coming soon. No payment is taken on this page.
     </div>
 
-    <button
-        class="checkout-btn"
-        id="checkoutBtn">
-        Proceed to Checkout
-    </button>
+    <div class="cart-actions">
+        <button
+            class="clear-cart-btn"
+            id="clearCartBtn"
+            type="button">
+            Clear Bag
+        </button>
+
+        <button
+            class="checkout-btn"
+            id="checkoutBtn"
+            type="button">
+            Proceed to Checkout
+        </button>
+    </div>
 
 </div>
 
@@ -3649,6 +3682,30 @@ document
         );
 
         event.target.reset();
+
+    });
+
+
+/* ---------------------------------------------------------
+   CLEAR BAG
+   --------------------------------------------------------- */
+
+document
+    .getElementById("clearCartBtn")
+    .addEventListener("click", () => {
+
+        if (!cart.length) {
+            showToast("Your bag is already empty.");
+            return;
+        }
+
+        cart = [];
+
+        saveCart();
+        renderCart();
+        updateCartCount();
+
+        showToast("Your bag has been cleared.");
 
     });
 
