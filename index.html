@@ -2584,7 +2584,7 @@ const products = [
     {
         id: 2,
         name: "Premium Casual Shirt",
-        image: "assets/products/premium-casual-shirt.svg",
+        image: "https://images.unsplash.com/photo-1669883444001-fa41496f490f?auto=format&fit=crop&fm=jpg&q=82&w=1200",
         category: "Men",
         price: 1199,
         visual: "visual-shirt visual-gray",
@@ -2597,7 +2597,7 @@ const products = [
     {
         id: 3,
         name: "Urban Cargo Trousers",
-        image: "assets/products/urban-cargo-trousers.svg",
+        image: "https://images.unsplash.com/photo-1781099792773-98816e68d9be?auto=format&fit=crop&fm=jpg&q=82&w=1200",
         category: "Men",
         price: 1399,
         visual: "visual-black",
@@ -2610,7 +2610,7 @@ const products = [
     {
         id: 4,
         name: "Everyday Crop Top",
-        image: "assets/products/everyday-crop-top.svg",
+        image: "https://images.unsplash.com/photo-1565937638518-b317c25447de?auto=format&fit=crop&fm=jpg&q=82&w=1200",
         category: "Women",
         price: 699,
         visual: "visual-pink visual-shirt",
@@ -2623,7 +2623,7 @@ const products = [
     {
         id: 5,
         name: "Relaxed Women's Shirt",
-        image: "assets/products/relaxed-womens-shirt.svg",
+        image: "https://images.unsplash.com/photo-1669883444001-fa41496f490f?auto=format&fit=crop&fm=jpg&q=82&w=1200",
         category: "Women",
         price: 1099,
         visual: "visual-sand visual-shirt",
@@ -2636,7 +2636,7 @@ const products = [
     {
         id: 6,
         name: "Minimalist Casual Dress",
-        image: "assets/products/minimalist-casual-dress.svg",
+        image: "https://images.unsplash.com/photo-1565462905097-5e701c31dcfb?auto=format&fit=crop&fm=jpg&q=82&w=1200",
         category: "Women",
         price: 1299,
         visual: "visual-pink",
@@ -2649,7 +2649,7 @@ const products = [
     {
         id: 7,
         name: "Signature Oversized Tee",
-        image: "assets/products/signature-oversized-tee.svg",
+        image: "https://images.unsplash.com/photo-1618354691229-88d47f285158?auto=format&fit=crop&fm=jpg&q=82&w=1200",
         category: "Unisex",
         price: 899,
         visual: "visual-black visual-shirt",
@@ -2662,7 +2662,7 @@ const products = [
     {
         id: 8,
         name: "AniMinati Essential Hoodie",
-        image: "assets/products/animinati-essential-hoodie.svg",
+        image: "https://images.unsplash.com/photo-1779675789882-ff0ab3bb1764?auto=format&fit=crop&fm=jpg&q=82&w=1200",
         category: "Unisex",
         price: 1499,
         visual: "visual-teal visual-shirt",
@@ -2675,7 +2675,7 @@ const products = [
     {
         id: 9,
         name: "Streetwear Sweatshirt",
-        image: "assets/products/streetwear-sweatshirt.svg",
+        image: "https://images.unsplash.com/photo-1781705580471-032712933e1f?auto=format&fit=crop&fm=jpg&q=82&w=1200",
         category: "Unisex",
         price: 1299,
         visual: "visual-gray visual-shirt",
@@ -2688,7 +2688,7 @@ const products = [
     {
         id: 10,
         name: "Urban Street Sneakers",
-        image: "assets/products/urban-street-sneakers.svg",
+        image: "https://images.unsplash.com/photo-1728724794795-681832a6afd0?auto=format&fit=crop&fm=jpg&q=82&w=1200",
         category: "Footwear",
         price: 1999,
         visual: "visual-sneaker",
@@ -2701,7 +2701,7 @@ const products = [
     {
         id: 11,
         name: "Everyday Slides",
-        image: "assets/products/everyday-slides.svg",
+        image: "https://images.unsplash.com/photo-1728724794795-681832a6afd0?auto=format&fit=crop&fm=jpg&q=82&w=1200",
         category: "Footwear",
         price: 799,
         visual: "visual-sand",
@@ -2714,7 +2714,7 @@ const products = [
     {
         id: 12,
         name: "Signature Crossbody Bag",
-        image: "assets/products/signature-crossbody-bag.svg",
+        image: "https://images.unsplash.com/photo-1569313717948-f797bcbf00db?auto=format&fit=crop&fm=jpg&q=82&w=1200",
         category: "Accessories",
         price: 999,
         visual: "visual-bag",
@@ -2913,6 +2913,7 @@ function renderProducts() {
     ? `<img
         class="product-image-real"
         src="${product.image}"
+        onerror="this.style.display='none'; this.nextElementSibling && (this.nextElementSibling.style.display='flex');"
         alt="${product.name}"
         loading="lazy"
         style="width:100%;height:100%;object-fit:contain;display:block;"
@@ -3151,6 +3152,7 @@ function openProduct(id) {
             <img
                 class="modal-image-real"
                 src="${product.image}"
+                onerror="this.style.display='none';"
                 alt="${product.name}"
                 style="width:100%;height:100%;object-fit:contain;display:block;"
             >
