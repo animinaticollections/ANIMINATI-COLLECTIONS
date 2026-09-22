@@ -1,18 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" role="img" aria-label="Premium fashion product render">
-<defs>
- <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#fafafa"/><stop offset="1" stop-color="#eceae7"/></linearGradient>
- <linearGradient id="mat" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#eef1f3"/><stop offset=".28" stop-color="#c6cbd0"/><stop offset=".72" stop-color="#c6cbd0"/><stop offset="1" stop-color="#8c949b"/></linearGradient>
- <linearGradient id="edge" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#8c949b"/><stop offset=".5" stop-color="#c6cbd0"/><stop offset="1" stop-color="#8c949b"/></linearGradient>
- <filter id="shadow" x="-30%" y="-30%" width="160%" height="180%"><feGaussianBlur stdDeviation="22"/></filter>
- <filter id="soft" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="5"/></filter>
- <pattern id="weave" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M0 2h10M0 7h10" stroke="#fff" stroke-opacity=".08" stroke-width="1"/></pattern>
-</defs>
-<rect width="900" height="900" fill="url(#bg)"/>
-<ellipse cx="450" cy="755" rx="255" ry="42" fill="#777" opacity=".18" filter="url(#shadow)"/>
-<g>
-<path d="M270 225L360 185Q450 225 540 185L630 225 735 350 630 410 580 330V675Q450 710 320 675V330L270 410 165 350Z" fill="url(#mat)" stroke="#8c949b" stroke-width="8"/>
-<path d="M360 185Q450 235 540 185" fill="none" stroke="#8c949b" stroke-width="8"/>
-<path d="M330 675Q450 695 570 675M275 230L210 350M625 230L690 350" stroke="#8c949b" stroke-width="12" fill="none" stroke-linecap="round"/>
-<path d="M320 585Q450 610 580 585" stroke="#eef1f3" stroke-width="9" opacity=".55"/>
-<path d="M320 330V675M580 330V675" stroke="#fff" stroke-opacity=".13" stroke-width="10"/>
-</g><rect x="145" y="105" width="610" height="590" fill="url(#weave)" opacity=".28" pointer-events="none"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 900" role="img" aria-labelledby="title"><title>AniMinati Collections product catalogue image</title><rect width="800" height="900" fill="#f2eee8"/><image href="https://images.unsplash.com/photo-1781705580471-032712933e1f?auto=format&fit=crop&fm=jpg&q=82&w=1200" x="0" y="0" width="800" height="900" preserveAspectRatio="xMidYMid slice"/><rect width="800" height="900" fill="none" stroke="#ffffff" stroke-opacity=".45" stroke-width="10"/></svg>
