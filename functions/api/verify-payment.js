@@ -50,7 +50,7 @@ export async function onRequestPost(context) {
         return jsonResponse({ error: "Payment verification requests must come from this website." }, 403);
     }
 
-    if (!env.RAZORPAY_KEY_ID || !env.RAZORPAY_KEY_SECRET) {
+    if (!env.RAZORPAY_KEY_ID || !env.RAZORPAY_KEY_SECRET || !env.DB) {
         return jsonResponse({ error: "Online payment is not configured yet." }, 503);
     }
 
@@ -82,6 +82,15 @@ export async function onRequestPost(context) {
 
     if (!timingSafeEqual(expectedSignature, suppliedSignature.toLowerCase())) {
         return jsonResponse({ error: "We could not verify this payment response." }, 400);
+    }
+
+    const storedOrder = await env.DB.prepare(
+        "SELECT id, amount, currency, status, payment_id FROM orders WHERE razorpay_order_id = ?"
+    ).bind(orderId).first();
+
+    if (!storedOrder || storedOrder.currency !== "INR" ||
+        !Number.isInteger(storedOrder.amount) || storedOrder.status === "refunded") {
+        return jsonResponse({ error: "This payment is not linked to a valid store order." }, 400);
     }
 
     const headers = { "Authorization": authHeader(env) };
@@ -127,6 +136,7 @@ export async function onRequestPost(context) {
     if (!order || order.id !== orderId || !order.notes ||
         order.notes.store !== STORE_NOTE ||
         order.currency !== "INR" ||
+        order.amount !== storedOrder.amount ||
         !payment || payment.id !== paymentId ||
         payment.order_id !== orderId ||
         payment.currency !== "INR" ||
@@ -142,6 +152,30 @@ export async function onRequestPost(context) {
             orderId: orderId,
             paymentId: paymentId,
             message: "Payment is still being confirmed. Please do not pay again. Check its status in Razorpay before retrying."
+        }, 202);
+    }
+
+    const now = Math.floor(Date.now() / 1000);
+    try {
+        await env.DB.prepare(
+            `UPDATE orders
+             SET status = 'paid',
+                 payment_id = ?,
+                 payment_status = 'captured',
+                 paid_at = COALESCE(paid_at, ?),
+                 updated_at = ?
+             WHERE razorpay_order_id = ?
+               AND amount = ?
+               AND currency = 'INR'
+               AND status != 'refunded'`
+        ).bind(paymentId, now, now, orderId, order.amount).run();
+    } catch {
+        return jsonResponse({
+            success: false,
+            pending: true,
+            orderId: orderId,
+            paymentId: paymentId,
+            message: "Payment was confirmed by Razorpay, but we could not save the order yet. Please do not pay again."
         }, 202);
     }
 
