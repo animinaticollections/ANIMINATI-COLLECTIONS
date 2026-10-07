@@ -10,5 +10,6 @@
       "/api/*"
     ]
   },
+  // Worker Previews use separate Preview Base secrets from Production.
   "previews": {}
 }
