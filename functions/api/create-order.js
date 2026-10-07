@@ -50,7 +50,7 @@ export async function onRequestPost(context) {
         return jsonResponse({ error: "Checkout requests must come from this website." }, 403);
     }
 
-    if (!env.RAZORPAY_KEY_ID || !env.RAZORPAY_KEY_SECRET) {
+    if (!env.RAZORPAY_KEY_ID || !env.RAZORPAY_KEY_SECRET || !env.DB) {
         return jsonResponse({ error: "Online payment is not configured yet. Please contact the store." }, 503);
     }
 
@@ -137,6 +137,9 @@ export async function onRequestPost(context) {
         return jsonResponse({ error: "Your bag total is outside the supported checkout range." }, 400);
     }
 
+    const now = Math.floor(Date.now() / 1000);
+    const internalOrderId = crypto.randomUUID();
+
     const notes = {
         store: STORE_NOTE,
         customer_name: name,
@@ -152,6 +155,34 @@ export async function onRequestPost(context) {
     if (email) notes.customer_email = email;
 
     const receipt = "ANI" + crypto.randomUUID().replace(/-/g, "").slice(0, 32);
+
+    try {
+        await env.DB.prepare(
+            `INSERT INTO orders (
+                id, razorpay_order_id, receipt, amount, currency, status,
+                customer_name, customer_phone, customer_email, address_line1,
+                address_line2, city, state, postal_code, items_json,
+                created_at, updated_at
+            ) VALUES (?, NULL, ?, ?, 'INR', 'creating', ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`
+        ).bind(
+            internalOrderId,
+            receipt,
+            amount,
+            name,
+            phone,
+            email || null,
+            addressLine1,
+            addressLine2 || null,
+            city,
+            state,
+            postalCode,
+            JSON.stringify(orderItems),
+            now,
+            now
+        ).run();
+    } catch {
+        return jsonResponse({ error: "We could not save your order. Please try again." }, 503);
+    }
 
     let gatewayResponse;
     try {
@@ -174,6 +205,11 @@ export async function onRequestPost(context) {
     }
 
     if (!gatewayResponse.ok) {
+        try {
+            await env.DB.prepare(
+                "UPDATE orders SET status = 'failed', failure_reason = ?, updated_at = ? WHERE id = ?"
+            ).bind("Razorpay order creation failed", Math.floor(Date.now() / 1000), internalOrderId).run();
+        } catch {}
         return jsonResponse({ error: "Razorpay could not create your order. Please try again." }, 502);
     }
 
@@ -185,7 +221,20 @@ export async function onRequestPost(context) {
     }
 
     if (!order || typeof order.id !== "string" || order.amount !== amount || order.currency !== "INR") {
+        try {
+            await env.DB.prepare(
+                "UPDATE orders SET status = 'failed', failure_reason = ?, updated_at = ? WHERE id = ?"
+            ).bind("Invalid Razorpay order response", Math.floor(Date.now() / 1000), internalOrderId).run();
+        } catch {}
         return jsonResponse({ error: "Razorpay returned an invalid order response." }, 502);
+    }
+
+    try {
+        await env.DB.prepare(
+            "UPDATE orders SET razorpay_order_id = ?, status = 'created', updated_at = ? WHERE id = ?"
+        ).bind(order.id, Math.floor(Date.now() / 1000), internalOrderId).run();
+    } catch {
+        return jsonResponse({ error: "We could not finalize your order. Please try again." }, 502);
     }
 
     return jsonResponse({
