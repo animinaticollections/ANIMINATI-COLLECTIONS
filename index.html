@@ -977,10 +977,10 @@ img {
     color: white;
 }
 
-.story-monogram {
-    font-family: var(--serif);
-    font-size: 180px;
-    font-weight: 400;
+.story-logo {
+    width: min(80%, 500px);
+    height: auto;
+    object-fit: contain;
     opacity: .85;
 }
 
@@ -2187,9 +2187,13 @@ footer {
 
 <div class="story-visual">
 
-    <div class="story-monogram">
-        A
-    </div>
+    <img
+        class="story-logo"
+        src="assets/logo-header.jpg"
+        alt="AniMinati Collections logo"
+        width="500"
+        height="144"
+        loading="lazy">
 
 </div>
 
