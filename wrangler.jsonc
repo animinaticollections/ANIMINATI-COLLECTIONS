@@ -6,9 +6,18 @@
   "secrets": {
     "required": [
       "RAZORPAY_KEY_ID",
-      "RAZORPAY_KEY_SECRET"
+      "RAZORPAY_KEY_SECRET",
+      "RAZORPAY_WEBHOOK_SECRET"
     ]
   },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "animinati-orders",
+      "database_id": "34d8d806-50e1-4a60-924a-eb538796accd",
+      "migrations_dir": "migrations"
+    }
+  ],
   "assets": {
     "directory": "./",
     "binding": "ASSETS",
