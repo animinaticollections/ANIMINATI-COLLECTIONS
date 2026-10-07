@@ -1,0 +1,6 @@
+/functions/
+/dist/
+/node_modules/
+/README.md
+/package.json
+/wrangler.jsonc

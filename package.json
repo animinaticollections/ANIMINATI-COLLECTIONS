@@ -1,0 +1,10 @@
+{
+  "name": "animinati-collections",
+  "private": true,
+  "scripts": {
+    "build": "wrangler pages functions build --outdir=./dist/worker/"
+  },
+  "devDependencies": {
+    "wrangler": "^4.0.0"
+  }
+}
