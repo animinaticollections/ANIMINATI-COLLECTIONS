@@ -3,6 +3,12 @@
   "name": "animinati-collections",
   "main": "./dist/worker/index.js",
   "compatibility_date": "2026-10-07",
+  "secrets": {
+    "required": [
+      "RAZORPAY_KEY_ID",
+      "RAZORPAY_KEY_SECRET"
+    ]
+  },
   "assets": {
     "directory": "./",
     "binding": "ASSETS",
