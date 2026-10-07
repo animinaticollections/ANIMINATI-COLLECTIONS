@@ -513,41 +513,86 @@ img {
     align-items: end;
 
     cursor: pointer;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    isolation: isolate;
+
+    transition: var(--transition);
 }
 
 .category-card::before {
     content: "";
     position: absolute;
     inset: 0;
+    z-index: -1;
 
     background:
-        radial-gradient(
-            circle at 50% 35%,
-            rgba(255,255,255,.2),
-            transparent 28%
+        linear-gradient(
+            180deg,
+            rgba(3,47,50,.08) 0%,
+            rgba(3,47,50,.18) 42%,
+            rgba(0,0,0,.78) 100%
         );
 
     transition: var(--transition);
 }
 
+.category-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(11,133,137,.22),
+            transparent 42%,
+            rgba(231,154,170,.10)
+        );
+
+    mix-blend-mode: multiply;
+    transition: var(--transition);
+}
+
+.category-card:hover {
+    transform: translateY(-4px);
+}
+
 .category-card:hover::before {
-    transform: scale(1.08);
+    background:
+        linear-gradient(
+            180deg,
+            rgba(3,47,50,.02) 0%,
+            rgba(3,47,50,.14) 40%,
+            rgba(0,0,0,.72) 100%
+        );
+}
+
+.category-card:hover::after {
+    transform: scale(1.05);
 }
 
 .category-men {
-    background: linear-gradient(150deg,#087f83,#06484b);
+    background-image:
+        url("https://images.unsplash.com/photo-1669883444001-fa41496f490f?auto=format&fit=crop&fm=jpg&q=82&w=1200");
 }
 
 .category-women {
-    background: linear-gradient(150deg,#db98a9,#b86d80);
+    background-image:
+        url("https://images.unsplash.com/photo-1565937638518-b317c25447de?auto=format&fit=crop&fm=jpg&q=82&w=1200");
 }
 
 .category-unisex {
-    background: linear-gradient(150deg,#2d2d2d,#111);
+    background-image:
+        url("https://images.unsplash.com/photo-1618354691229-88d47f285158?auto=format&fit=crop&fm=jpg&q=82&w=1200");
 }
 
 .category-footwear {
-    background: linear-gradient(150deg,#e2c49f,#b28f65);
+    background-image:
+        url("https://images.unsplash.com/photo-1728724794795-681832a6afd0?auto=format&fit=crop&fm=jpg&q=82&w=1200");
 }
 
 .category-info {
@@ -560,8 +605,10 @@ img {
     background:
         linear-gradient(
             transparent,
-            rgba(0,0,0,.45)
+            rgba(0,0,0,.62)
         );
+
+    text-shadow: 0 2px 18px rgba(0,0,0,.35);
 }
 
 .category-info h3 {
