@@ -11,5 +11,6 @@
     ]
   },
   // Worker Previews use separate Preview Base secrets from Production.
+  // Trigger an isolated Preview build after enabling Cloudflare Preview Builds.
   "previews": {}
 }
